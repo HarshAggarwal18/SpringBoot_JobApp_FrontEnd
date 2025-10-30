@@ -4,9 +4,9 @@ const registerUser = async (user: any) => {
   return axiosInstance
     .post(`/users/register`, user)
     .then((result: any) => {
-      result.data;
-      //   console.log(result.config.url);
+      // log request url and return response data
       console.log("url result -->" + result.config?.url);
+      return result.data;
     })
     .catch((error: any) => {
       console.log("url -->" + error.config?.url);
